@@ -1,18 +1,24 @@
 import java.util.ArrayList;
 
-import MyLib.Menù;
+import MyLib.Menu;
 import MyLib.Utility;
 
+/**
+ * Classe che definisce il Main del programma.
+ *
+ * @author Gabriele Manenti, Matteo Gusmini
+ *
+ * @version 3.0 1 Febbraio 2019
+ *
+ */
 public class Main {
-
+    /**
+     * Metodo Main del programma
+     *
+     */
 	public static void main(String[] args) {
-		// prova di uso github 
-		//ABC
-		//DEF
-		
-		
-		// Costanti che contengono i messaggi da visualizzare in Output
 
+        /*Costanti*/
 		final String MSGBENVENUTO="Benvenuto nella social di gestione eventi";
 		final String NOMEMENU="GESTIONE Eventi";
 		final String[] OPZIONI={"Visualizza Categorie"};
@@ -20,15 +26,16 @@ public class Main {
 		final String DESCRIZIONE="Descrizione: ";
 		final String SCELTACATEGORIA="Quale categoria vuoi vedere in dettaglio?";
 			
-		
+		/*Messaggio di benvenuto*/
 		System.out.println(MSGBENVENUTO);
 
+        /*Creazione degli oggetti principali per l'esecuzione del programma*/
 		ArrayList<Categoria> categorie=new ArrayList<>();
 		Partita partita= new Partita();
 		categorie.add(partita);
-		
-		
-		Menù myMenu= new Menù(NOMEMENU,OPZIONI);
+
+        /*Menu Scelta Opzioni*/
+		Menu myMenu= new Menu(NOMEMENU,OPZIONI);
 		int scelta;
 		
 		
@@ -40,7 +47,7 @@ public class Main {
 				break;
 			
 			case 1:
-				// Visualizza categorie
+				/*Visualizza categorie*/
 				
 				for(int i=0; i<categorie.size();i++){
 					System.out.println(i+1+")");
